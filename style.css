@@ -8,6 +8,7 @@ html,body{
     height: 100%;
     width: 100%;
     background-color: #f1f1f1;
+    /* background: transparent; */
 }
 #main{
     position: relative;
@@ -33,17 +34,36 @@ html,body{
 }
 #page3{
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    margin-left: 74%;
+    height: 75vh;
+    width: 27vw;
     background-color: #f1f1f1;
+    z-index: 12;
 }
 canvas{
     /* margin-top: 5vw; */
-    position: relative;
+    position:  absolute;
     z-index: 9;
     max-width: 100vw;
     max-height: 100vh;
+    /* background-color: aqua; */
 }
+
+#for-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    canvas{
+        position:  absolute;
+        z-index: 9;
+        padding-top:75%;
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+    }
+}
+
 #loop{
     display: flex;
     position: absolute;
@@ -77,6 +97,37 @@ canvas{
         transform: translateX(-100%);
     }
 }
+
+@media screen and (max-width: 600px) {
+
+    #loop{
+        display: none;
+    }
+
+    #for-mobile{
+        display:block;
+        position: absolute;
+        top: 10%;
+        height:10vh;
+        width: 100%;
+        font-size:4vh;
+        text-align: center;
+        font-family: gilroy;
+        text-transform: uppercase;
+        /* background-color: aqua; */
+    }
+    #for-mobile h1{
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    #for-mobile h1 span{
+        -webkit-text-stroke: 1.2px #000;
+        color: transparent;
+        font-weight: 500;
+    }
+}
+
 #nav{
     display: flex;
     align-items: center;
@@ -89,7 +140,7 @@ canvas{
 }
 
 #nav h3{
-    font-family: gilroy;
+    font-family:gilroy;
     font-weight: 400;
     font-size: 22px;
 }
@@ -99,8 +150,36 @@ canvas{
     background-color: #000;
     color: #fff;
     border: none;
+    font-family:gilroy;
 }
-
+@media screen and (max-width: 600px) {
+    #nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 8%;
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        padding: 0px 30px;
+        background-color: #f1f1f1;
+    }
+    
+    #nav h3{
+        font-family:gilroy;
+        font-weight: 400;
+        font-size: 25px;
+    }
+    #nav button{
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        font-family:gilroy;
+        font-size: 15px;
+    }
+}
 /* page */
 
 .h3text{
@@ -114,7 +193,7 @@ canvas{
 #page h3{
     position: absolute;
     top: 20%;
-    font-family: gilroy;
+    font-family:gilroy;
     font-weight: 400;
     color: #7c7c7c;
     left: 10%;
@@ -124,30 +203,61 @@ canvas{
     position: absolute;
     top: 80%;
     left: 45%;
-    font-family: gilroy;
-    font-weight: 500;
+    font-family:Futura;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+    .h3text{
+        /* background-color: red; */
+        width: 100%;
+        height: 20vh;
+        position: absolute;
+        top: 18%;
+    }
+    
+    #page h3{
+        position: absolute;
+        top: 20%;
+        font-family:gilroy;
+        font-weight: 400;
+        color: #7c7c7c;
+        left: 5%;
+    }
+    
+    #page h4{
+        position: absolute;
+        top: 80%;
+        left: 45%;
+        font-family:Futura;
+        font-weight: 300;
+    }
 }
 
 /* page 1 */
 
 #page1 #right-text{
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 5%;
-    width: 30vw;
-    height: 40vh;
+    width: 31vw;
+    height: 70.8vh; 
     /* background-color: yellow; */
 }
 
 #page1 #right-text h3{
     font-weight: 400;
     color: #7c7c7c;
-    font-size: 30px;
+    font-size: 2vw;
+    font-family:gilroy;
 }
 
 #page1 #right-text h1{
     line-height: 1.5;
-    font-size: 50px;
+    font-size: 3.4vw;
+    font-family:Futura;
+    text-transform: uppercase;
+   
 }
 
 #page1 #left-text{
@@ -161,34 +271,96 @@ canvas{
 }
 
 #page1 #left-text h1{
-    font-size: 50px;
+    font-size: 3.4vw;
     line-height: 1.5;
+    font-family:Futura;
 }
 
 #page1 #left-text h3{
+    font-family:gilroy;
     color: #7c7c7c;
     font-weight: 400;
     width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    #page1 #right-text{
+        position: absolute;
+        top: 10%;
+        left: 5vw;
+        width: 100%;
+        height: 70.8vh; 
+        /* background-color: yellow; */
+    }
+    
+    #page1 #right-text h3{
+        font-weight: 400;
+        color: #7c7c7c;
+        font-size: 5vw;
+        font-family:gilroy;
+
+    }
+    
+    #page1 #right-text h1{
+        width: 40%;
+        line-height: 1.5;
+        font-size: 6.5vw;
+        font-family:Futura;
+        text-transform: uppercase;
+        /* background-color: tomato; */
+       
+    }
+    
+    #page1 #left-text{
+        position: absolute;
+        top: 50%;
+        text-align: end;
+        right: 2%;
+        width: 90%;
+        height: 15vh;
+        /* background-color: rgb(0, 255, 128); */
+    }
+    
+    #page1 #left-text h1{
+        font-size: 6vw;
+        line-height: 1.5;
+        font-family:Futura;
+        
+    }
+    
+    #page1 #left-text h3{
+        font-family:gilroy;
+        color: #7c7c7c;
+        font-weight: 400;
+        width: 100%;
+        font-size: 4vw;
+    }
 }
 
 /* page 2 */
 
 #page2 #text1{
     position: absolute;
-    top: 30%;
+    top: 27%;
     left: 4%;
     width: 35vw;
-    height: 65vh;
+    height: 70vh;
+    font-size: 1.5vw;
+    /* background-color: aqua; */
     /* background-color: rgb(212, 255, 0); */
 }
 #page2 #text1 h3{
+    font-family:gilroy;
     color: #7c7c7c;
     font-weight: 400;
 }
 #page2 #text1 h1{
-    font-size: 60px;
+    font-size: 4vw;
     line-height: 1.5;
+    font-family:Futura;
 }
+
 #page2 #text2{
     position: absolute;
     top: 65%;
@@ -200,30 +372,85 @@ canvas{
 }
 
 #page2 #text2 p{
+    font-family:gilroy;
     font-size: 17px;
     color: #7c7c7c;
     font-weight: 400;
 }
 
+@media screen and (max-width: 600px) {
+    #page2{
+        /* background-color: violet; */
+        height: 100vh;
+    }
+
+    #page2 #text1{
+        position: absolute;
+        top: 10%;
+        left: 4%;
+        right: 4%;
+        width: 100%;
+        height: 70vh;
+        font-size: 1.5vw;
+        /* background-color: aqua; */
+        /* background-color: rgb(212, 255, 0); */
+    }
+    #page2 #text1 h3{
+        font-family:gilroy;
+        color: #7c7c7c;
+        font-weight: 400;
+        font-size: 4vw;
+    }
+    #page2 #text1 h1{
+        font-size: 6vw;
+        left: 4%;
+        right: 4%;
+        line-height: 1.5;
+        font-family:Futura;
+        font-size: 7vw;
+    }
+    
+    #page2 #text2{
+        position: absolute;
+        top: 30%;
+        left: 4%;
+        text-align: end;
+        width: 96%;
+        height: 18vh;
+        padding-right: 5px;
+        /* background-color: rgb(192, 185, 219); */
+    }
+    
+    #page2 #text2 p{
+        margin-right: 10px;
+        font-family:gilroy;
+        font-size: 17px;
+        color: #7c7c7c;
+        font-weight: 400;
+    }
+}
+
 /* page 3 */
 #page3 #text3{
     position: absolute;
-    top: 40%;
-    right: 5%;
+    width: 27vw;
+    height: 25vh;
+    top: 60%;
+    right: 10%;
     text-align: end;
-    width: 40vw;
-    height: 50vh;
     /* background-color: rgb(151, 219, 237); */
 }
 
 #page3 #text3 h3{
+    font-family:gilroy;
     color: #7c7c7c;
     font-weight: 400;
 }
 
 #page3 #text3 h1{
-    font-size: 70px;
-
+    font-size: 5vw;
+    font-family:Futura;
+    /* background-color: aqua; */
 }
 
 #page3 #text3 #cont-logo{
@@ -231,5 +458,53 @@ canvas{
     font-weight: 400;
     margin-left: 5px;
     margin-top: 8px;
-    font-size: 25px;
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 600px) {
+    #page3{
+        position: relative;
+        max-height: 90vw;
+        width: 100%;
+        /* background-color: #ba0000; */
+        margin: 0%;
+        z-index: 2;
+        align-items: center;
+        padding-bottom: 0%;
+        bottom: 0%;
+    }
+    #page3 #text3{
+        position:absolute;
+        width: 80%;
+        height: 30vh;
+        top: 10%;
+        align-items: center;
+        margin: 0%;
+        /* background-color: rgb(151, 219, 237); */
+    }
+    
+    #page3 #text3 h3{
+        width: 100%;
+        text-align: center;
+        font-family:gilroy;
+        color: #7c7c7c;
+        font-weight: 400;
+        bottom: 0%;
+    }
+    
+    #page3 #text3 h1{
+        font-size: 6vw;
+        font-family:Futura;
+        text-align: center;
+       
+    }
+    
+    #page3 #text3 #cont-logo{
+        color: #7c7c7c;
+        font-weight: 400;
+        margin-left: 5px;
+        margin-top: 8px;
+        font-size: 6vw;
+    }
+
 }
